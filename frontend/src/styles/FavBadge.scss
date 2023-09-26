@@ -1,5 +1,8 @@
 .fav-badge {
-  position: relative;
+  display: flex;
+  position: absolute;
+  top: 17px;
+  right: 280px;
 }
 
 .fav-badge__count { 
@@ -21,4 +24,8 @@ height: 20px;
     position: absolute;
     font-size: 16px;
   }
+}
+
+.fav-badge.clicked .fav-icon {
+  color: rgb(255, 0, 0);
 }

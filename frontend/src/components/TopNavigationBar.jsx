@@ -1,13 +1,23 @@
 import React from 'react';
+import TopicList from './TopicList';
+import '../styles/TopNavigationBar.scss';
+import '../routes/HomeRoute';
+import FavIcon from './FavIcon';
 
-import '../styles/TopNavigationBar.scss'
 
-const TopNavigation = () => {
+
+const TopNavigation = ({ topics, likes}) => {
   return (
     <div className="top-nav-bar">
       <span className="top-nav-bar__logo">PhotoLabs</span>
+      <nav className="top-nav-bar__nav">
+        <ul className="top-nav-bar__nav-list">
+          <TopicList topics={topics} />
+        </ul>
+      </nav>
+      <FavIcon likes={likes} displayAlert={likes.length > 0} isClicked={likes.length > 0}/>
     </div>
-  )
-}
+  );
+};
 
 export default TopNavigation;
