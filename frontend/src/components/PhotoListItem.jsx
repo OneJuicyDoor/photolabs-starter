@@ -4,8 +4,6 @@ import "../styles/PhotoListItem.scss";
 import "../App";
 
 const PhotoListItem = ({ username, imageSource, photoId, location, profile, toggleLike, isLiked, setIsModalOpen, handlePhotoClick, photo, likes }) => {
-  // openModal({ username, imageSource, id, location, profile,});
-
 
   return (
     <div className="photo-list-item">

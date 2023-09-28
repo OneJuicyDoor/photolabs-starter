@@ -1,5 +1,3 @@
-// FavIcon.jsx
-
 import React from 'react';
 
 const FavIcon = ({ displayAlert, isClicked }) => {

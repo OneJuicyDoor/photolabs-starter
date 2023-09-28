@@ -1,4 +1,3 @@
-// PhotoList.js
 import React from 'react';
 import PhotoListItem from './PhotoListItem';
 import '../App';
