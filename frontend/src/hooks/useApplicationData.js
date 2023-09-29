@@ -62,6 +62,22 @@ const useApplicationData = () => {
     dispatch({ type: 'OPEN_MODAL', payload: photo });
   }, []);
 
+  const handleTopicClick = useCallback((topicId) => {
+    // Handle the topic click here and update the state
+    // You can fetch the data related to the clicked topic and update the state accordingly
+    fetch(`${apiBaseUrl}/topics/photos/${topicId}`)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("data", data)
+        // Update state with data related to the clicked topic
+        // For example: dispatch({ type: 'SET_TOPIC_DATA', payload: data });
+        dispatch({ type: 'SET_PHOTOS', payload: data });
+      })
+      .catch((error) => {
+        console.error('Error fetching topic data:', error);
+      });
+  }, []);
+
   const toggleLike = useCallback((ID) => {
     dispatch({ type: 'TOGGLE_LIKE', payload: ID });
   }, []);
@@ -73,6 +89,7 @@ const useApplicationData = () => {
   return {
     toggleLike,
     handlePhotoClick,
+    handleTopicClick,
     isModalOpen: state.isModalOpen,
     closeModal,
     modalPhoto: state.modalPhoto,
