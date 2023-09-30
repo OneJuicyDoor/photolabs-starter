@@ -5,7 +5,7 @@ import '../styles/PhotoDetailsModal.scss'
 import closeSymbol from '../assets/closeSymbol.svg';
 import PhotoList from 'components/PhotoList';
 
-const PhotoDetailsModal = ({ setIsModalOpen, closeModal, toggleLike, likes, isLiked, photo, photos }) => {
+const PhotoDetailsModal = ({ setIsModalOpen, closeModal, toggleLike, likes, isLiked, photo, photos}) => {
   return (
     <div className="photo-details-modal">
       <div className="photo-details-modal__icon-container">
@@ -25,7 +25,7 @@ const PhotoDetailsModal = ({ setIsModalOpen, closeModal, toggleLike, likes, isLi
           </div>
         </div>
       </div>
-      <PhotoList photos={Object.values(photo.similar_photos)} likes={likes} toggleLike={toggleLike} />
+      <PhotoList photos={Object.values(photo.similar_photos)} likes={likes} toggleLike={toggleLike} handlePhotoClick={() => null} />
     </div>
   )
 };
