@@ -8,14 +8,13 @@ import PhotoList from 'components/PhotoList';
 const PhotoDetailsModal = ({ setIsModalOpen, closeModal, toggleLike, likes, isLiked, photo, photos, photoId}) => {
   return (
     <div className="photo-details-modal">
-      <div className="photo-details-modal__icon-container">
+
         <button className="photo-details-modal__close-button" onClick={closeModal}>
           <img src={closeSymbol} alt="close symbol" />
         </button>
-        <FavBadge isInsideModal onClick={toggleLike} photoId={photo.id} isLiked={likes.includes(photo.id)} toggleLike={toggleLike} likes={likes} />
-      </div>
       <div className='photo-details-modal__images'>
         <img className='photo-details-modal__image' src={photo.urls.full} />
+        <FavBadge onClick={toggleLike} photoId={photo.id} isLiked={likes.includes(photo.id)} toggleLike={toggleLike} likes={likes} />
         <div className="photo-list__user-details">
           <img className="photo-list__user-profile" src={photo.user.profile} alt={`${photo.user.username}'s profile`} />
           <div>
