@@ -18,6 +18,7 @@ const PhotoList = (props) => {
       handlePhotoClick={handlePhotoClick}
       photo={photo}
       likes={likes}
+      isLiked={likes.includes(photo.id)}
     />
   ))
   return (

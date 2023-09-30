@@ -8,7 +8,7 @@ const PhotoListItem = ({ username, imageSource, photoId, location, profile, togg
   return (
     <div className="photo-list-item">
       <img className="photo-list__image" src={imageSource} alt={`Photo by ${username}`} onClick={() => handlePhotoClick(photo)}  />
-      <FavBadge  isLiked={!isLiked} toggleLike={toggleLike} photoId={photoId} likes={likes} />
+      <FavBadge  isLiked={isLiked} toggleLike={toggleLike} photoId={photoId} likes={likes} />
       <div className="photo-list__user-details">
       <img className="photo-list__user-profile" src={profile} alt={`${username}'s profile`} />
         <div className="photo-list__user-info" >
